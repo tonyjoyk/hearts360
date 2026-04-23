@@ -1,0 +1,355 @@
+/* District summary section + right-side "District report" panel
+   Integrated with HEARTS360 design tokens (colors, radii, spacing). */
+
+/* ---------- District summary card ---------- */
+.district-summary {
+  gap: 18px;
+}
+
+.district-summary .heading {
+  margin-bottom: 4px;
+}
+.district-summary .heading p {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0;
+}
+
+.district-summary .ds-subhead {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0 0 10px 0;
+}
+
+/* Trends grid */
+.trends-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #e5e5e5;
+}
+@media screen and (min-width: 720px) {
+  .trends-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.trend {
+  background: #fff;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.trend-label {
+  font-size: 0.78rem;
+  color: #666;
+  line-height: 1.2;
+}
+
+/* Metric name → change vs last month → current value → sparkline */
+.trend-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-variant-numeric: tabular-nums;
+}
+.trend-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.trend-delta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: rgba(0, 0, 0, 0.45);
+  min-height: 1.15em;
+}
+.trend-delta.good { color: #3bb231; }
+.trend-delta.bad  { color: #ff3355; }
+
+.sparkline {
+  width: 100%;
+  height: 28px;
+  display: block;
+}
+.sparkline .spark-line { fill: none; stroke-width: 1.5; }
+.sparkline .spark-line.good { stroke: #3bb231; }
+.sparkline .spark-line.bad  { stroke: #ff3355; }
+.sparkline .spark-line.flat { stroke: rgba(0, 0, 0, 0.35); }
+.sparkline .spark-dot.good { fill: #3bb231; }
+.sparkline .spark-dot.bad  { fill: #ff3355; }
+.sparkline .spark-dot.flat { fill: rgba(0, 0, 0, 0.35); }
+
+/* Key insights */
+.ds-block {
+  margin: 0;
+}
+.ds-insights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ds-insights li {
+  position: relative;
+  padding: 4px 0 4px 18px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #2a2a2a;
+}
+.ds-insights li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 13px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #aaa;
+}
+.ds-insights li.bad::before  { background: #ff3355; }
+.ds-insights li.good::before { background: #3bb231; }
+
+/* Facilities that need attention */
+.ds-facilities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ds-facility {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #fafafa;
+}
+.ds-facility-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+.ds-facility-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #111;
+}
+.ds-facility-meta {
+  font-variant-numeric: tabular-nums;
+  color: #666;
+  font-size: 0.82rem;
+  margin-bottom: 6px;
+}
+.ds-facility-reason {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #2a2a2a;
+}
+
+/* Action needed tag — reuses warning colors already in template.css */
+.tag-action-needed {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #b5001f;
+  background: rgba(255, 51, 85, 0.12);
+  border: 1px solid rgba(255, 51, 85, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* CTA — full width on narrow viewports so the action is easy to spot */
+.ds-cta {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin-top: 8px;
+}
+@media screen and (max-width: 719px) {
+  .ds-cta {
+    justify-content: stretch;
+  }
+  .ds-cta .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.btn-primary {
+  appearance: none;
+  border: 0;
+  background: #0075eb;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 120ms ease, transform 80ms ease;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+.btn-primary:hover {
+  background: #004f9f;
+}
+.btn-primary:focus-visible {
+  outline: 2px solid #0075eb;
+  outline-offset: 2px;
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Right-side "District report" panel ---------- */
+.drp-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+  z-index: 1999;
+  opacity: 0;
+  transition: opacity 180ms ease;
+  pointer-events: none;
+}
+.drp-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media screen and (min-width: 1024px) {
+  /* On desktop, do not darken content; panel overlays without modal feel. */
+  .drp-overlay { display: none; }
+}
+
+@media screen and (min-width: 720px) {
+  .district-report-panel {
+    left: auto;
+    width: min(92vw, 480px);
+  }
+}
+
+.district-report-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  background: #fff;
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.14);
+  border-left: 1px solid #d6d6d6;
+  transform: translateX(100%);
+  transition: transform 220ms cubic-bezier(0.2, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  z-index: 2000;
+  font-family: var(--system-ui);
+}
+.district-report-panel.open {
+  transform: translateX(0);
+}
+
+.drp-resizer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  cursor: col-resize;
+  background: transparent;
+  z-index: 3;
+  touch-action: none;
+}
+.drp-resizer:hover,
+.drp-resizer.dragging {
+  background: rgba(0, 117, 235, 0.15);
+}
+@media screen and (max-width: 720px) {
+  .drp-resizer { display: none; } /* fixed width on mobile */
+}
+
+.drp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid #e5e5e5;
+  background: #fafafa;
+  flex: 0 0 auto;
+}
+.drp-header h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+}
+.drp-actions {
+  display: flex;
+  gap: 4px;
+}
+.drp-btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.drp-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: #111;
+}
+.drp-btn:focus-visible {
+  outline: 2px solid #0075eb;
+  outline-offset: 2px;
+}
+.drp-btn svg { display: block; }
+
+#drp-frame {
+  flex: 1 1 auto;
+  width: 100%;
+  border: 0;
+  background: #f5f5f5;
+}
+#drp-frame.loading {
+  background:
+    #f5f5f5
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><circle cx='20' cy='20' r='16' stroke='%230075eb' stroke-width='3' fill='none' stroke-dasharray='80 200' stroke-linecap='round'><animateTransform attributeName='transform' type='rotate' from='0 20 20' to='360 20 20' dur='1s' repeatCount='indefinite'/></circle></svg>")
+    no-repeat center center;
+}
+
+/* Prevent layout shift when body has scrollbar and panel is open on mobile */
+body.drp-open {
+  overflow: hidden;
+}
+@media screen and (min-width: 1024px) {
+  /* Desktop keeps scrolling the background */
+  body.drp-open { overflow: auto; }
+}

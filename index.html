@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="css/preflight.css?v=1.0" />
     <link rel="stylesheet" href="css/template.css" />
+    <link rel="stylesheet" href="css/district-summary.css" />
   </head>
   <body>
     <div class="banner">
@@ -4920,97 +4921,190 @@
 
       <h2 class="columns-header">1. Overview indicators</h2>
 
-      <div class="columns-3">
-        <div class="card col-span-2">
-          <div class="heading">
-            <h3>
-              Patients protected from heart attacks and strokes with world-class
-              treatment
-            </h3>
-            <div class="figures">
-              <p class="large-num bp-controlled">4,808 patients</p>
-              <div class="detail">
-                <p>in River District with BP &lt;140/90</p>
+      <div class="card district-summary">
+        <div class="heading">
+          <h3>District summary</h3>
+          <p>
+            Sylhet District &middot; April 2026 &middot; 47 facilities &middot;
+            42,937 patients
+          </p>
+        </div>
+
+        <div class="ds-block">
+          <h4 class="ds-subhead">Trends</h4>
+          <div class="trends-grid">
+            <div class="trend" data-current="54" data-delta="-2" data-good="up">
+              <div class="trend-label">BP control</div>
+              <div class="trend-metrics">
+                <span class="trend-delta"></span>
+                <span class="trend-value">54%</span>
               </div>
+              <svg
+                class="sparkline"
+                viewBox="0 0 100 28"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              ></svg>
             </div>
-            <div class="chart" style="height: 350px">
-              <canvas id="patientsprotected"></canvas>
+            <div class="trend" data-current="17" data-delta="1" data-good="down">
+              <div class="trend-label">BP uncontrolled</div>
+              <div class="trend-metrics">
+                <span class="trend-delta"></span>
+                <span class="trend-value">17%</span>
+              </div>
+              <svg
+                class="sparkline"
+                viewBox="0 0 100 28"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              ></svg>
+            </div>
+            <div class="trend" data-current="31" data-delta="1" data-good="down">
+              <div class="trend-label">Missed visit</div>
+              <div class="trend-metrics">
+                <span class="trend-delta"></span>
+                <span class="trend-value">31%</span>
+              </div>
+              <svg
+                class="sparkline"
+                viewBox="0 0 100 28"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              ></svg>
+            </div>
+            <div class="trend" data-current="36" data-delta="-1" data-good="up">
+              <div class="trend-label">Titration rate</div>
+              <div class="trend-metrics">
+                <span class="trend-delta"></span>
+                <span class="trend-value">36%</span>
+              </div>
+              <svg
+                class="sparkline"
+                viewBox="0 0 100 28"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              ></svg>
+            </div>
+            <div class="trend" data-current="48" data-delta="1" data-good="up">
+              <div class="trend-label">Statin prescription</div>
+              <div class="trend-metrics">
+                <span class="trend-delta"></span>
+                <span class="trend-value">48%</span>
+              </div>
+              <svg
+                class="sparkline"
+                viewBox="0 0 100 28"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              ></svg>
+            </div>
+            <div class="trend" data-current="8" data-delta="0" data-good="down">
+              <div class="trend-label">BP fudging</div>
+              <div class="trend-metrics">
+                <span class="trend-delta"></span>
+                <span class="trend-value">8%</span>
+              </div>
+              <svg
+                class="sparkline"
+                viewBox="0 0 100 28"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              ></svg>
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="heading">
-            <h3>Hypertension treatment cascade</h3>
-            <p>
-              Estimated adults (&gt;30) in River District with hypertension who
-              are registered, under care, and controlled.
-            </p>
-            <div class="info">
-              <div class="info-hover-text">
-                <p>
-                  <b>Estimated population</b> with hypertension is derived from
-                  a STEPS Community Survey conducted in 2022.
-                </p>
-                <p>
-                  <b>Patients under care</b> are patients with hypertension with
-                  at least 1 visit in the past 12 months.
-                </p>
+
+        <div class="ds-block">
+          <h4 class="ds-subhead">Key insights</h4>
+          <ul class="ds-insights">
+            <li class="bad">
+              BP control has dropped for 3 months in a row. The main reasons look
+              like low titration (36%) and missed visits (31%).
+            </li>
+            <li class="bad">
+              6 facilities need action this month. 2 of them are new problems.
+            </li>
+            <li class="bad">
+              Drug stock is low at 3 facilities. Kacuya Bohor has been low for 4
+              months.
+            </li>
+            <li class="good">
+              Overdue patient calls have doubled. About 1,000 patients came back
+              to care last month.
+            </li>
+            <li class="good">
+              5 facilities improved by 2 points or more. Gungadiya and Paton
+              gained 6 points each.
+            </li>
+          </ul>
+        </div>
+
+        <div class="ds-block">
+          <h4 class="ds-subhead">Facilities that need attention</h4>
+          <ul class="ds-facilities">
+            <li class="ds-facility">
+              <div class="ds-facility-head">
+                <div class="ds-facility-name">CC Chhatrish</div>
+                <span class="tag-action-needed">Action needed</span>
               </div>
-            </div>
-          </div>
-          <div class="body">
-            <div class="coverage">
-              <div class="coverage-column">
-                <div class="coverage-bar">
-                  <div class="coverage-bar-fill" style="height: 100%">
-                    <p class="coverage-estimated">100%</p>
-                  </div>
-                </div>
-                <p>250,800</p>
-                <p class="text-grey label-small">
-                  Estimated people with hypertension
-                </p>
+              <div class="ds-facility-meta">263 patients</div>
+              <div class="ds-facility-reason">
+                BP control fell 5 points in one month. Stock is full, so this
+                looks like care or staffing. A visit is needed.
               </div>
-              <div class="coverage-column">
-                <div class="coverage-bar">
-                  <div
-                    class="coverage-bar-fill registrations-bg"
-                    style="height: 5%"
-                  >
-                    <p class="coverage-number registrations">5%</p>
-                  </div>
-                </div>
-                <p>12,213</p>
-                <p class="text-grey label-small">
-                  Cumulative registered patients
-                </p>
+            </li>
+            <li class="ds-facility">
+              <div class="ds-facility-head">
+                <div class="ds-facility-name">CC Osmaninagar</div>
+                <span class="tag-action-needed">Action needed</span>
               </div>
-              <div class="coverage-column">
-                <div class="coverage-bar">
-                  <div
-                    class="coverage-bar-fill under-care-bg"
-                    style="height: 4%"
-                  >
-                    <p class="coverage-number under-care">4%</p>
-                  </div>
-                </div>
-                <p>10,632</p>
-                <p class="text-grey label-small">Patients under care</p>
+              <div class="ds-facility-meta">1,442 patients</div>
+              <div class="ds-facility-reason">
+                Lowest BP control in the district (37%). Fudging is high (18%), so
+                the real rate may be lower. Flagged for 3 months.
               </div>
-              <div class="coverage-column">
-                <div class="coverage-bar">
-                  <div
-                    class="coverage-bar-fill bp-controlled-bg"
-                    style="height: 2%"
-                  >
-                    <p class="coverage-number bp-controlled">2%</p>
-                  </div>
-                </div>
-                <p>4,808</p>
-                <p class="text-grey label-small">Patients with BP controlled</p>
+            </li>
+            <li class="ds-facility">
+              <div class="ds-facility-head">
+                <div class="ds-facility-name">UHC Fenchuganj</div>
+                <span class="tag-action-needed">Action needed</span>
               </div>
-            </div>
-          </div>
+              <div class="ds-facility-meta">1,313 patients</div>
+              <div class="ds-facility-reason">
+                BP control is 38%. Many patients missed visits (35%). Drug stock is
+                only partial, and titration is low.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="ds-cta">
+          <button
+            type="button"
+            class="btn-primary"
+            id="open-district-report"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="district-report-panel"
+          >
+            Open district report
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -6598,8 +6692,8 @@
           </p>
 
           <span class="nav-section">Overview indicators</span>
-          <a href="#note-patients-protected" class="nav-jump-links"
-            >Patients protected</a
+          <a href="#note-district-summary" class="nav-jump-links"
+            >District summary</a
           >
           <a href="#note-treatment-cascade" class="nav-jump-links"
             >Hypertension treatment cascade</a
@@ -6673,14 +6767,13 @@
             <div class="notes-details"></div>
           </div>
           <div class="notes-section">
-            <div class="notes-note" id="note-patients-protected">
-              <h6>Patients protected</h6>
+            <div class="notes-note" id="note-district-summary">
+              <h6>District summary</h6>
               <p>
-                This indicator is a very simplistic representation of the number
-                of patients controlled. It is primarily useful as a motivational
-                tool for health staff and for advocacy. The data simply
-                represents the numerator from the "BP controlled at latest visit
-                in past 3 months" indicator below.
+                The district summary pulls together BP control and related quality
+                signals for the selected district. Trends compare this month with
+                last month (percentage points). Use the district report panel for
+                facility-level detail.
               </p>
             </div>
             <div class="notes-details">
@@ -7301,6 +7394,87 @@
       </div>
     </main>
 
+    <!-- District report panel (overlays from the right) -->
+    <div
+      id="district-report-overlay"
+      class="drp-overlay"
+      aria-hidden="true"
+    ></div>
+    <aside
+      id="district-report-panel"
+      class="district-report-panel"
+      role="dialog"
+      aria-modal="false"
+      aria-hidden="true"
+      aria-labelledby="drp-title"
+      tabindex="-1"
+    >
+      <div
+        class="drp-resizer"
+        role="separator"
+        aria-orientation="vertical"
+        aria-label="Resize district report panel"
+      ></div>
+      <header class="drp-header">
+        <h2 id="drp-title">District report</h2>
+        <div class="drp-actions">
+          <button
+            type="button"
+            class="drp-btn"
+            id="drp-open-new"
+            title="Open in a new tab"
+            aria-label="Open in a new tab"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M10 2h4v4M14 2l-6 6M12 9v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="drp-btn"
+            id="drp-close"
+            title="Close panel (Esc)"
+            aria-label="Close district report panel"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M4 4l8 8M12 4l-8 8"
+                stroke="currentColor"
+                stroke-width="1.6"
+                fill="none"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+      <iframe
+        id="drp-frame"
+        title="District report"
+        loading="lazy"
+        src="about:blank"
+      ></iframe>
+    </aside>
+
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
     <script src="./js/charts.js"></script>
@@ -7309,9 +7483,14 @@
     <script src="js/tablesort.js"></script>
     <script src="js/tablesort.number.js"></script>
     <script src="js/navigation.js"></script>
+    <script src="js/district-summary.js"></script>
     <script>
-      new Tablesort(document.getElementById("table-regions"));
-      new Tablesort(document.getElementById("table-stock-inventory"));
+      (function () {
+        var tr = document.getElementById("table-regions");
+        var ts = document.getElementById("table-stock-inventory");
+        if (tr && typeof Tablesort !== "undefined") new Tablesort(tr);
+        if (ts && typeof Tablesort !== "undefined") new Tablesort(ts);
+      })();
     </script>
   </body>
 </html>
